@@ -1,7 +1,11 @@
-import './App.css';
+import Logo from './components/logo/Logo';
 
 function App() {
-    return <></>;
+    return (
+        <>
+            <Logo />
+        </>
+    );
 }
 
 export default App;
