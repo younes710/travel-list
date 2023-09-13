@@ -11,7 +11,7 @@ const PackingList = () => {
         <div className={styles['list']}>
             <ul>
                 {initialItems.map((item, index) => (
-                    <Item item={item} key={index} />
+                    <Item item={item} key={item.id} />
                 ))}
             </ul>
         </div>
