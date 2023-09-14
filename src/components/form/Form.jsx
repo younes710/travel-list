@@ -1,19 +1,25 @@
 import { useState } from 'react';
 import styles from './form.module.css';
 
-const Form = () => {
-    const [desc, setDesc] = useState('');
+const Form = ({ onAddItems }) => {
+    const [description, setDescription] = useState('');
     const [quantity, setQuantity] = useState(1);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!desc) return;
+        if (!description) return;
 
-        const newItem = { desc, quantity, packed: false, id: Date.now() };
-        console.log(newItem);
+        const newItem = {
+            description,
+            quantity,
+            packed: false,
+            id: Date.now(),
+        };
 
-        setDesc('');
+        onAddItems(newItem);
+
+        setDescription('');
         setQuantity(1);
     };
 
@@ -35,8 +41,8 @@ const Form = () => {
             <input
                 type='text'
                 placeholder='Item...'
-                value={desc}
-                onChange={(e) => setDesc(e.target.value)}
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
             />
             <button>Add</button>
         </form>
