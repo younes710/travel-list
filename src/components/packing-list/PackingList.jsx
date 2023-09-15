@@ -1,7 +1,7 @@
 import Item from '../item/Item';
 import styles from './packingList.module.css';
 
-const PackingList = ({ items, onDeleteItem }) => {
+const PackingList = ({ items, onDeleteItem, onToggleItem }) => {
     return (
         <div className={styles['list']}>
             <ul>
@@ -10,6 +10,7 @@ const PackingList = ({ items, onDeleteItem }) => {
                         item={item}
                         key={item.id}
                         onDeleteItem={onDeleteItem}
+                        onToggleItem={onToggleItem}
                     />
                 ))}
             </ul>
